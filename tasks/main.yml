@@ -13,14 +13,8 @@
     group: root
     mode: 0644
 
-- name: Update apt cache
-  apt:
-    update_cache: yes
-    cache_valid_time: 360
-
-- name: Install Google Chrome
-  apt:
-    update_cache: yes
-    cache_valid_time: 3600
-    pkg: google-chrome-stable
+- name: install Google Chrome
+  ansible.builtin.package:
+    name:
+      - google-chrome-stable
     state: present
